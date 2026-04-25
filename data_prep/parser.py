@@ -3,8 +3,8 @@ import json
 import re
 
 MIN_CHARS = 1
-MAX_TEXT_EACH = 3000
-MAX_TEXT_TOTAL = 4000
+MAX_TEXT_EACH = 2500
+MAX_TEXT_TOTAL = 3000
 
 def simplify(text_list) -> str:
     """
@@ -24,6 +24,8 @@ def scrub(title, description) -> str:
     """
     Return a cleansed full string with product numbers and unimportant details removed
     """
+    if title:
+        title = simplify(title)
     result = title + "\n"
     if description:
         result += simplify(description) + "\n"
@@ -44,8 +46,7 @@ def parse(datapoint):
     except ValueError:
         return None
     
-    if MIN_CHARS <= len(product_title) <= MAX_TEXT_EACH and MIN_CHARS <= len(product_description) <= MAX_TEXT_EACH:
-
+    if MIN_CHARS <= len(product_title) and MIN_CHARS <= len(product_description):
         full = scrub(product_title, product_description)
         if len(full) >= MIN_CHARS:
             return Item(

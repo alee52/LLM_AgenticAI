@@ -1,4 +1,4 @@
-import PIL import Image
+from PIL import Image
 from pydantic import BaseModel
 from datasets import Dataset, DatasetDict, load_dataset
 from typing import Optional, Self

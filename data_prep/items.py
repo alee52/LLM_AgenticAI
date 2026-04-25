@@ -1,3 +1,4 @@
+import PIL import Image
 from pydantic import BaseModel
 from datasets import Dataset, DatasetDict, load_dataset
 from typing import Optional, Self
@@ -14,6 +15,7 @@ class Item(BaseModel):
 
     title: str
     category: str
+    # image: Image.Image
     full: Optional[str] = None
     summary: Optional[str] = None
     prompt: Optional[str] = None

@@ -29,7 +29,7 @@ def scrub(title, description) -> str:
     result = title + "\n"
     if description:
         result += simplify(description) + "\n"
-    pattern = r"\b(?=[A-Z0-9]{7,}\b)(?=.*[A-Z])(?=.*\d)[A-Z0-9]+\b"
+    pattern = r"\b(?=[A-Z0-9]{4,}\b)(?=.*[A-Z])(?=.*\d)[A-Z0-9]+\b"
     return re.sub(pattern, "", result).strip()[:MAX_TEXT_TOTAL]
 
 def parse(datapoint):

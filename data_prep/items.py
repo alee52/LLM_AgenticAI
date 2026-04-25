@@ -15,8 +15,9 @@ class Item(BaseModel):
 
     title: str
     category: str
-    # image: Image.Image
+    image: Optional[Image.Image] = None
     full: Optional[str] = None
+    description: Optional[str] = None
     summary: Optional[str] = None
     prompt: Optional[str] = None
     id: Optional[int] = None

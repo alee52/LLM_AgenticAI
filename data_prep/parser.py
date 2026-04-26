@@ -3,8 +3,8 @@ import json
 import re
 
 MIN_CHARS = 1
-MAX_TEXT_EACH = 2000
-MAX_TEXT_TOTAL = 2250
+MAX_TEXT_EACH = 2500
+MAX_TEXT_TOTAL = 2750
 
 def top_level_category_extractor(full_category):
     #extract the top level category from the full category string, which is in the format "Top Level > Subcategory 1 > Subcategory 2"
@@ -64,12 +64,13 @@ def parse(datapoint):
 
     if len(product_description) < MIN_CHARS:
         return None
+    
+    # if datapoint["image_url"] is None:
+    #     return None
 
     full = scrub(product_title, product_description)
 
     return Item(
-        title=product_title,
-        description=product_description,
         category=top_level_category_extractor(ground_truth_category),
         full=full,
     )

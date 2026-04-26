@@ -13,11 +13,9 @@ class Item(BaseModel):
     An Item is a data-point of a Product with a category label. It can be used to create prompts for training a model to predict the category of a product based on its title and description.
     """
 
-    title: str
     category: str
-    image: Optional[Image.Image] = None
+    # image: Optional[Image.Image] = None
     full: Optional[str] = None
-    description: Optional[str] = None
     summary: Optional[str] = None
     prompt: Optional[str] = None
     id: Optional[int] = None

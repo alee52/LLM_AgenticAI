@@ -1,6 +1,7 @@
 from data_prep.items import Item
 import json
 import re
+from PIL import Image
 
 MIN_CHARS = 1
 MAX_TEXT_EACH = 2500
@@ -73,6 +74,7 @@ def parse(datapoint):
     return Item(
         category=top_level_category_extractor(ground_truth_category),
         full=full,
+        # image=datapoint["product_image"],  # Initialize image with the URL
     )
 
 

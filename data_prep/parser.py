@@ -1,6 +1,7 @@
 from data_prep.items import Item
 import json
 import re
+from langdetect import detect, LangDetectException
 from PIL import Image
 
 MIN_CHARS = 1
@@ -11,6 +12,15 @@ def top_level_category_extractor(full_category):
     #extract the top level category from the full category string, which is in the format "Top Level > Subcategory 1 > Subcategory 2"
     top_lev = full_category.split(' > ')[0]
     return top_lev
+
+def is_english(text: str) -> bool:
+    if not text or not isinstance(text, str):
+        return False
+    
+    try:
+        return detect(text) == "en"
+    except LangDetectException:
+        return False
 
 def simplify(text_list) -> str:
     """
@@ -59,6 +69,10 @@ def parse(datapoint):
         product_title,
     ]):
         return None
+    
+    # if not is_english(product_description):
+    #     return None
+
 
     if len(product_title) < MIN_CHARS:
         return None

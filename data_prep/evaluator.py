@@ -57,7 +57,7 @@ class Tester:
         datapoint = self.data[i]
         value = self.predictor(datapoint)
         guess = self.post_process(value)
-        truth = self.tokenizer.encode(datapoint.category, add_special_tokens=False)
+        truth = self.tokenizer.encode(datapoint["completion"], add_special_tokens=False)
         is_correct = (guess == truth)
         
 

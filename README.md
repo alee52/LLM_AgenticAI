@@ -14,5 +14,5 @@ Product descriptions were cleaned and preprocessed using OpenAI’s GPT-4.1-nano
 
 ### Fine-Tuned Llama-3.2-3B
 
-Llama-3.2-3B was fine-tuned using QLoRA for product category prediction, achieving 77% accuracy on the testing set.
+Llama-3.2-3B was fine-tuned using QLoRA for product category prediction, achieving 77.4% accuracy on the testing set.
 

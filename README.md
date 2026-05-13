@@ -10,7 +10,7 @@ Dataset: https://huggingface.co/datasets/Shopify/product-catalogue
 
 Product descriptions were cleaned and preprocessed using OpenAI’s GPT-4.1-nano. Products without English descriptions were excluded from the project. After filtering and resampling to reduce class imbalance, the final curated dataset contained approximately 28,000 data points.
 
-## Experiment
+## Model development
 
 ### Fine-Tuned Llama-3.2-3B
 

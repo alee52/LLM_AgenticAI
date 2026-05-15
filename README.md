@@ -10,9 +10,10 @@ Dataset: https://huggingface.co/datasets/Shopify/product-catalogue
 
 Product descriptions were cleaned and preprocessed using OpenAI’s GPT-4.1-nano. Products without English descriptions were excluded from the project. After filtering and resampling to reduce class imbalance, the final curated dataset contained approximately 28,000 data points.
 
-## Experiment
+## Model development
 
-### Fine-Tuned Llama-3.2-3B
+### Fine-Tuned LLM
 
 Llama-3.2-3B was fine-tuned using QLoRA for product category prediction, achieving 77.4% accuracy on the testing set.
 
+### Retrieval-Augmented Generation (RAG)

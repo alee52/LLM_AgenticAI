@@ -17,3 +17,5 @@ Product descriptions were cleaned and preprocessed using OpenAI’s GPT-4.1-nano
 Llama-3.2-3B was fine-tuned using QLoRA for product category prediction, achieving 77.4% accuracy on the testing set.
 
 ### Retrieval-Augmented Generation (RAG)
+
+Accuracy with RAG reached 83.9% on test set.

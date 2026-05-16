@@ -14,7 +14,10 @@ Product descriptions were cleaned and preprocessed using OpenAI’s GPT-4.1-nano
 
 ### Fine-Tuned LLM
 
-Llama-3.2-3B was fine-tuned using QLoRA for product category prediction, achieving 77.4% accuracy on the testing set.
+Llama-3.2-3B was fine-tuned using QLoRA for product category prediction, achieving 77.4% accuracy on the testing set. Lora parameters:
+
+### Frontier Model: GPT-5.1
+With medium reason effort, a 73.9% accuracy was achieved.
 
 ### Retrieval-Augmented Generation (RAG)
 

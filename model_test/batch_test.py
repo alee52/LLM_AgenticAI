@@ -9,12 +9,12 @@ from tqdm.notebook import tqdm
 load_dotenv(override=True)
 openai = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
-MODEL = "gpt-4.1-nano"
+MODEL = "gpt-5.1"
 BATCHES_FOLDER = "batches"
 OUTPUT_FOLDER = "output"
 state = Path("batches.pkl")
-
-SYSTEM_PROMPT = """Create a 1 sentence concise description of a product with key features, purpose or use cases. Do not include part numbers."""
+top_level_list = {'Bundles', 'Food, Beverages & Tobacco', 'Product Add-Ons', 'Gift Cards', 'Hardware', 'Home & Garden', 'Sporting Goods', 'Electronics', 'Baby & Toddler', 'Uncategorized', 'Apparel & Accessories', 'Furniture', 'Media', 'Toys & Games', 'Religious & Ceremonial', 'Luggage & Bags', 'Cameras & Optics', 'Arts & Entertainment', 'Software', 'Office Supplies', 'Animals & Pet Supplies', 'Vehicles & Parts', 'Health & Beauty', 'Business & Industrial', 'Services'}
+SYSTEM_PROMPT = """Predict the category of the product from the given product description. Your answer must be one of the following: {categories}""".format(categories=", ".join(top_level_list))
 
 
 class Batch:
@@ -40,9 +40,10 @@ class Batch:
     def make_jsonl(self, item):
         body = {
             "model": MODEL,
+            "reasoning_effort": "medium",
             "messages": [
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": item.full},
+                {"role": "user", "content": item.summary},
             ]
         }
         line = {
@@ -93,8 +94,8 @@ class Batch:
             for line in f:
                 json_line = json.loads(line)
                 id = int(json_line["custom_id"])
-                summary = json_line["response"]["body"]["choices"][0]["message"]["content"]
-                self.items[id].summary = summary
+                completion = json_line["response"]["body"]["choices"][0]["message"]["content"]
+                self.items[id].completion = completion
         self.done = True
 
     @classmethod

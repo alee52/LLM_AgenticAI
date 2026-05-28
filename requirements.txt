@@ -37,3 +37,6 @@ protobuf==3.20.2
 wandb
 jupyterlab
 langdetect
+peft
+bitsandbytes
+trl

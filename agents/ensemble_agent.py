@@ -19,7 +19,7 @@ class EnsembleAgent(Agent):
         self.preprocessor = Preprocessor()
         self.log("Ensemble Agent is ready")
 
-    def categorize(self, description: str) -> float:
+    def categorize(self, description: str) -> str:
         """
         Run this ensemble model
         """
@@ -37,4 +37,4 @@ class EnsembleAgent(Agent):
             self.log(f"Ensemble Agent - disagreement between models, more information needed to resolve")
             print(specialist)
             print(rag)
-            return None
+            return "Unable to categorize the product with high confidence."

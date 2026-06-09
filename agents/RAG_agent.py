@@ -82,4 +82,5 @@ class RAGAgent(Agent):
         )
         reply = response.choices[0].message.content
         self.log(f"Frontier Agent completed - predicting {reply}")
+        print("this is the raw response from the RAG agent", reply)
         return reply

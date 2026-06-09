@@ -121,4 +121,5 @@ class SpecialistAgent(Agent):
         generated_ids = output_ids[0, prompt_len:-1]
         result = self.tokenizer.decode(generated_ids)
         self.log(f"Specialist Agent completed - predicting {result}")
+        print("this is the raw response from the Specialist agent", result)
         return result

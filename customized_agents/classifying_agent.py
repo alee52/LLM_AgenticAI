@@ -1,10 +1,10 @@
 from typing import Optional, List, Dict
-from agents.agent import Agent
+from customized_agents.agent import Agent
 
 
-from agents.ensemble_agent import EnsembleAgent
-# from agents.manager_agent import ManagerAgent
-# from agents.customer_agent import CustomerAgent
+from customized_agents.ensemble_agent import EnsembleAgent
+# from customized_agents.manager_agent import ManagerAgent
+# from customized_agents.customer_agent import CustomerAgent
 from openai import OpenAI
 import json
 

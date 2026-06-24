@@ -2,7 +2,7 @@ import re
 from typing import List, Dict
 from openai import OpenAI
 from sentence_transformers import SentenceTransformer
-from agents.agent import Agent
+from customized_agents.agent import Agent
 
 
 class RAGAgent(Agent):

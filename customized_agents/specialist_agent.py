@@ -1,6 +1,6 @@
 from typing import List, Dict
 from sentence_transformers import SentenceTransformer
-from agents.agent import Agent
+from customized_agents.agent import Agent
 import os
 import re
 import math
@@ -34,7 +34,7 @@ class SpecialistAgent(Agent):
         # Load the Tokenizer and the Model
         BASE_MODEL = "meta-llama/Llama-3.2-3B"
         PROJECT_NAME = "categorize_products_no_cate"
-        HF_USER = "leearum95" # your HF name here!
+        HF_USER = "leearum95" 
 
         LITE_MODE = False
 

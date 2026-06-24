@@ -1,7 +1,7 @@
-from agents.agent import Agent
-from agents.specialist_agent import SpecialistAgent
-from agents.RAG_agent import RAGAgent
-from agents.preprocessor import Preprocessor
+from customized_agents.agent import Agent
+from customized_agents.specialist_agent import SpecialistAgent
+from customized_agents.RAG_agent import RAGAgent
+from customized_agents.preprocessor import Preprocessor
 
 
 class EnsembleAgent(Agent):

@@ -160,11 +160,9 @@ message. They do not yet send a real email, notification, or support ticket.
 ├── products_vectorstore/        # Persistent Chroma product collection
 ├── data_prep/                   # Dataset parsing and evaluation helpers
 ├── model_test/                  # Batch and RAG evaluation scripts
-├── archive/                     # Earlier experiments and notebook versions
 ├── Fine_tuning_Llama.ipynb
 ├── data_curation.ipynb
 ├── data_preprocessing.ipynb
-├── ensemble_models.ipynb
 ├── frontier_models.ipynb
 ├── rag.ipynb
 ├── pyproject.toml
